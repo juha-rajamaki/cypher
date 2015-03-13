@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Cypher text popup</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+<!-- ###
+    <div id="status"></div>
+    <img id="image-result" hidden>
+--->
+
+	<input id="cypher" type="button" name="test" value="ROT13" onClick="" />
+
+	<br /><br />
+
+	UnCyphered text
+	<textarea onClick="cypher()" id="input" name="input" type="textarea" cols="40"></textarea>
+
+	<br /><br />
+
+	Cyphered text
+        <textarea id="output" name="output" type="textarea" cols="40"></textarea>
+
+  </body>
+</html>
+
